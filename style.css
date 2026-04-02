@@ -310,6 +310,24 @@ body {
   height: 100%;
 }
 
+#creatureDrawSurface {
+  display: block;
+  width: 100%;
+  height: min(58vh, 700px);
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.preview-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.preview-subsection {
+  display: grid;
+  gap: 8px;
+}
+
 .creature-workspace {
   display: grid;
   grid-template-columns: minmax(0, 1.28fr) minmax(360px, 0.72fr);

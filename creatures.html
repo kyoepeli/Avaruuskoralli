@@ -28,32 +28,35 @@
       </div>
     </section>
 
-    <section class="creature-workspace">
-      <section class="card creature-main-card">
+    <section class="workspace">
+      <section class="card pad-card">
         <div class="card-header">
           <div>
-            <p class="section-label">Swarm</p>
-            <h2>Colony View</h2>
+            <p class="section-label">Input</p>
+            <h2>Drawing Area</h2>
           </div>
-          <p id="swarmStatus" class="status-pill neutral">Camera alternates between wide orbit and swim-through</p>
+          <p id="creaturePadStatus" class="status-pill">Waiting for a creature stroke</p>
         </div>
-        <div class="preview-frame preview-frame-large">
-          <div id="swarmPreview" class="preview-surface preview-surface-large"></div>
+        <div class="canvas-frame">
+          <canvas id="creatureDrawSurface"></canvas>
         </div>
-        <p id="creatureShareStatus" class="helper-text subtle">Version 0.1. Copy the current creature descriptor set for testing.</p>
+        <p class="helper-text">
+          Draw the creature's control curve here. Fast strokes should read as faster species, while jagged and self-crossing curves can push behaviour toward aggression, ornament, and colony complexity.
+        </p>
+        <p id="creatureShareStatus" class="helper-text subtle">Version 0.2. Copy the current creature descriptor set for testing.</p>
       </section>
 
-      <section class="card inspector-card creature-inspector-card">
+      <section class="card inspector-card">
         <div class="card-header">
           <div>
             <p class="section-label">Traits</p>
             <h2>Creature Variables</h2>
           </div>
         </div>
-        <div id="creatureAttributeGrid" class="attribute-grid creature-attribute-grid"></div>
+        <div id="creatureAttributeGrid" class="attribute-grid"></div>
       </section>
 
-      <section class="card notes-card creature-notes-card">
+      <section class="card notes-card">
         <div class="card-header">
           <div>
             <p class="section-label">Brainstorm</p>
@@ -64,19 +67,27 @@
         <div id="creatureIdeaCards" class="idea-cards"></div>
       </section>
 
-      <section class="card creature-detail-card">
+      <section class="card preview-card">
         <div class="card-header">
           <div>
-            <p class="section-label">Specimen</p>
-            <h2>Single Creature</h2>
+            <p class="section-label">Preview</p>
+            <h2>Colony + Specimen</h2>
           </div>
-          <p class="status-pill neutral">Slow turntable orbit</p>
+          <p id="swarmStatus" class="status-pill neutral">Wide orbit with occasional swim-through</p>
         </div>
-        <div class="preview-frame preview-frame-small">
-          <div id="specimenPreview" class="preview-surface preview-surface-small"></div>
+        <div class="preview-stack">
+          <div class="preview-frame preview-frame-large">
+            <div id="swarmPreview" class="preview-surface preview-surface-large"></div>
+          </div>
+          <div class="preview-subsection">
+            <p class="section-label">Specimen</p>
+            <div class="preview-frame preview-frame-small">
+              <div id="specimenPreview" class="preview-surface preview-surface-small"></div>
+            </div>
+          </div>
         </div>
         <p class="preview-caption">
-          The small view isolates one representative creature so body plan, appendages, and surface treatment stay readable while the swarm evolves.
+          The swarm view stays readable at colony scale, while the smaller turntable view isolates one representative creature for silhouette and surface checks.
         </p>
       </section>
     </section>
