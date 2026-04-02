@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curve Foundry</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <nav class="page-nav" aria-label="Project pages">
+      <a class="nav-chip active" href="./index.html">Habitat Foundry</a>
+      <a class="nav-chip" href="./creatures.html">Creature Foundry</a>
+    </nav>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Generative Workbench</p>
+        <h1>Sketch a curve. Tune the descriptors. Grow a mothership or coral nest.</h1>
+        <p class="lede">
+          The curve is treated as a control gesture for a procedural 3D organism or flagship structure.
+          Draw once, inspect the extracted values, hand-edit them, and compare different generation ideas.
+        </p>
+      </div>
+      <div class="hero-actions">
+        <button id="shareButton" class="ghost-button secondary" type="button">Copy settings</button>
+        <button id="clearButton" class="ghost-button" type="button">Clear curve</button>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <section class="card pad-card">
+        <div class="card-header">
+          <div>
+            <p class="section-label">Input</p>
+            <h2>Drawing Area</h2>
+          </div>
+          <p id="padStatus" class="status-pill">Waiting for a stroke</p>
+        </div>
+        <div class="canvas-frame">
+          <canvas id="drawSurface"></canvas>
+        </div>
+        <p class="helper-text">
+          Draw a single curve. Smooth loops should soften the form. Sharp turns and self-crossings should add spines, ribs, and nested structure.
+        </p>
+        <p id="shareStatus" class="helper-text subtle">Version 0.1. Share the current descriptor set with the copy button.</p>
+      </section>
+
+      <section class="card inspector-card">
+        <div class="card-header">
+          <div>
+            <p class="section-label">Attributes</p>
+            <h2>Editable Descriptors</h2>
+          </div>
+        </div>
+        <div id="attributeGrid" class="attribute-grid"></div>
+      </section>
+
+      <section class="card notes-card">
+        <div class="card-header">
+          <div>
+            <p class="section-label">Brainstorm</p>
+            <h2>Generative Algorithms</h2>
+          </div>
+        </div>
+        <textarea id="brainstormInput" class="brainstorm-input" spellcheck="false">Base idea: interpret the curve as a growth command. Self-crossings raise recursion depth, turning intensity bends outer arms, and directness decides whether the object reads more like a disciplined mothership or a sprawling reef nest.</textarea>
+        <div id="ideaCards" class="idea-cards"></div>
+      </section>
+
+      <section class="card preview-card">
+        <div class="card-header">
+          <div>
+            <p class="section-label">Preview</p>
+            <h2>3D Structure</h2>
+          </div>
+          <p id="previewMode" class="status-pill neutral">Live from curve + edits</p>
+        </div>
+        <div class="preview-frame">
+          <div id="previewSurface" class="preview-surface"></div>
+          <div class="preview-caption">
+            Camera drifts continuously. The current descriptor mix biases silhouette, branching, rings, and directional asymmetry.
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
