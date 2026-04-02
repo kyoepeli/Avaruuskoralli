@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creature Foundry</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <nav class="page-nav" aria-label="Project pages">
+      <a class="nav-chip" href="./index.html">Habitat Foundry</a>
+      <a class="nav-chip active" href="./creatures.html">Creature Foundry</a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Creature Design Lab</p>
+        <h1>Design the colony species that will later inhabit the nest or mothership.</h1>
+        <p class="lede">
+          This page focuses only on the creature itself and its swarm behaviour. Tune morphology, social dynamics,
+          and rendering style, then compare a wide shoal view against a single rotating specimen.
+        </p>
+      </div>
+      <div class="hero-actions">
+        <button id="creatureShareButton" class="ghost-button secondary" type="button">Copy creature settings</button>
+        <button id="creatureResetButton" class="ghost-button" type="button">Reset creature</button>
+      </div>
+    </section>
+
+    <section class="creature-workspace">
+      <section class="card creature-main-card">
+        <div class="card-header">
+          <div>
+            <p class="section-label">Swarm</p>
+            <h2>Colony View</h2>
+          </div>
+          <p id="swarmStatus" class="status-pill neutral">Camera alternates between wide orbit and swim-through</p>
+        </div>
+        <div class="preview-frame preview-frame-large">
+          <div id="swarmPreview" class="preview-surface preview-surface-large"></div>
+        </div>
+        <p id="creatureShareStatus" class="helper-text subtle">Version 0.1. Copy the current creature descriptor set for testing.</p>
+      </section>
+
+      <section class="card inspector-card creature-inspector-card">
+        <div class="card-header">
+          <div>
+            <p class="section-label">Traits</p>
+            <h2>Creature Variables</h2>
+          </div>
+        </div>
+        <div id="creatureAttributeGrid" class="attribute-grid creature-attribute-grid"></div>
+      </section>
+
+      <section class="card notes-card creature-notes-card">
+        <div class="card-header">
+          <div>
+            <p class="section-label">Brainstorm</p>
+            <h2>Behaviour + Appearance Ideas</h2>
+          </div>
+        </div>
+        <textarea id="creatureBrainstormInput" class="brainstorm-input" spellcheck="false">Colony idea: semi-social organisms that drift in loose schools, occasionally braiding into tighter formations when the habitat suggests danger or docking behaviour. Surface treatment should help them read as one species even when individuals vary slightly.</textarea>
+        <div id="creatureIdeaCards" class="idea-cards"></div>
+      </section>
+
+      <section class="card creature-detail-card">
+        <div class="card-header">
+          <div>
+            <p class="section-label">Specimen</p>
+            <h2>Single Creature</h2>
+          </div>
+          <p class="status-pill neutral">Slow turntable orbit</p>
+        </div>
+        <div class="preview-frame preview-frame-small">
+          <div id="specimenPreview" class="preview-surface preview-surface-small"></div>
+        </div>
+        <p class="preview-caption">
+          The small view isolates one representative creature so body plan, appendages, and surface treatment stay readable while the swarm evolves.
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <script src="./creatures.js"></script>
+</body>
+</html>
